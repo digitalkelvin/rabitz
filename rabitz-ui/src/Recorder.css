@@ -1,0 +1,61 @@
+#rb-media-container {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.rb-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  transition: border-color 0.25s;
+
+  background-color: #242424;
+}
+
+.rb-button:hover:not(:disabled) {
+  color: #818181;
+  cursor: pointer;
+  border: 1px solid #818181;
+}
+
+.rb-button:focus,
+.rb-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+#rb-recordings-container {
+  width: 100%;
+  /* display: flex; */
+  /* margin-bottom: 20px; */
+}
+
+.rb-recording {
+  max-width: 25%;
+  border-radius: 8px;
+}
+
+#rb-media-container select {
+  background-color: #242424;
+  /* color:white; */
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5em;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+#rb-media-container option {
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+#rb-media-container select:focus {
+  width: 100%;
+}
+
+.rb-bar {
+  background: linear-gradient(0deg, white, black);
+}
+
+.rb-meter {
+  background: linear-gradient(0deg, #1a1a1a, #949494, #1a1a1a);
+}

@@ -1,0 +1,77 @@
+{
+    "name": "rabitz",
+    "version": "0.0.0",
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "solid": "./dist/index.js",
+            "import": "./dist/index.js",
+            "default": "./dist/index.js"
+        },
+        "./index.css": "./dist/index.css"
+    },
+    "keywords": [
+        "solidjs",
+        "solid-js",
+        "ui",
+        "component",
+        "video",
+        "media",
+        "recorder",
+        "camera",
+        "microphone",
+        "audio",
+        "webcam",
+        "hooks",
+        "typescript",
+        "tailwind",
+        "ui-library",
+        "frontend"
+    ],
+    "description": "A lightweight SolidJS media components library for video/audio capture, recording, and playback UI.",
+    "author": "DigitalKelvin",
+    "license": "MPL-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DigitalKelvin/rabitz"
+    },
+    "homepage": "https://github.com/DigitalKelvin/rabitz#readme",
+    "dependencies": {
+        "vite": "^6.2.0",
+        "vite-plugin-solid": "^2.11.5"
+    },
+    "devDependencies": {
+        "@solidjs/testing-library": "^0.8.10",
+        "@tailwindcss/vite": "^4.3.0",
+        "@types/node": "^25.9.3",
+        "autoprefixer": "^10.5.0",
+        "jsdom": "^29.1.1",
+        "postcss": "^8.5.15",
+        "shx": "^0.4.0",
+        "tailwindcss": "^4.3.1",
+        "typescript": "^5.9.3",
+        "vite-plugin-dts": "^4.5.4",
+        "vitest": "^4.1.8"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.9.0"
+    },
+    "scripts": {
+        "dev": "vite --host 0.0.0.0 --port 5174",
+        "build": "npm run typecheck  && npm run test && vite build && npm pack",
+        "typecheck": "tsc --noEmit",
+        "watch": "vite build --watch",
+        "prepack": "shx cp ../README.md ./README.md",
+        "postpack": "shx rm -f ./README.md",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    }
+}

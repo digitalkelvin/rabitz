@@ -1,0 +1,25 @@
+{
+    "name": "example",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "npm cache clean --force && npm install ../rabitz-ui/rabitz-0.0.1.tgz --prefer-online && vite --host 0.0.0.0",
+        "build": "tsc -b && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "rabitz": "file:../rabitz-ui/rabitz-0.0.1.tgz",
+        "solid-js": "^1.9.12"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.3.1",
+        "@tailwindcss/vite": "^4.3.1",
+        "@types/node": "^24.12.3",
+        "postcss": "^8.5.15",
+        "tailwindcss": "^4.3.1",
+        "typescript": "~6.0.2",
+        "vite": "^8.0.12",
+        "vite-plugin-solid": "^2.11.12"
+    }
+}
