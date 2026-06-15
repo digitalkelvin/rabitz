@@ -17,8 +17,7 @@ export function Devices() {
       echoCancellation: true,
     },
     video: {
-      facingMode: "user",
-      aspectRatio: 16 / 9,
+      aspectRatio: { ideal: 16 / 9 },
       width: {
         min: 1280,
         ideal: 1920,
@@ -85,8 +84,7 @@ export function Devices() {
 
     if (videoDeviceId() !== "none") {
       constraints.video = {
-        facingMode: "user",
-        aspectRatio: 16 / 9,
+        aspectRatio: { ideal: 16 / 9 },
         width: {
           min: 1280,
           ideal: 1920,

@@ -7,6 +7,10 @@ export default defineConfig({
     tailwindcss(),
     solid(),
   ],
+  server: {
+    host: true,
+    allowedHosts: true
+  },
   optimizeDeps: {
     exclude: ['rabitz']
   }

@@ -158,7 +158,7 @@ export class MRecorder {
         let url = URL.createObjectURL(blob);
 
         setRecordings((prev) => [...prev, {
-          url, mimeType: this.mimeType
+          url, mimeType: this.mimeType, blob, id: crypto.randomUUID()
         }]);
 
         this.chunks = [];
