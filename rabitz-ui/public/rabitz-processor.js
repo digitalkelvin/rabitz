@@ -11,7 +11,6 @@ class VUMeterProcessor extends AudioWorkletProcessor {
 
   process(inputs, outputs, parameters) {
     const input = inputs[0];
-    // const output = outputs[0];
     const numChannels = input.length;
 
     this.channelRMS = new Array(numChannels);
@@ -68,8 +67,6 @@ class VUMeterProcessor extends AudioWorkletProcessor {
 
     return frequencies;
   }
-
-
 
 }
 

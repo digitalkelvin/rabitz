@@ -1,3 +1,4 @@
 import "./index.css";
 export { Recorder as RabitzUI } from "./Recorder";
-export { recordings, recordingInfo } from "./mediaState"
+export { recording, recordings, recordingInfo } from "./mediaState"
+export type { Recording as RecordingType, RecordingInfo as RecordingInfoType } from "./models/models"

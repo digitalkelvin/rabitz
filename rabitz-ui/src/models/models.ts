@@ -22,4 +22,15 @@ export type RecordingInfo = {
   recordingState: string;
 };
 
+export type RecordingCore = {
+  id: string;
+  blob: Blob;
+  mimeType: string;
+};
+
+export type Recording = RecordingCore & {
+  /** @deprecated will be removed in future versions */
+  url?: string;
+};
+
 export type VisualizerStyle = "spectrum" | "meter";

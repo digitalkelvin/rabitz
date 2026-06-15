@@ -1,7 +1,8 @@
 import {
   stream, setRecordings, maxRecordingTime, recordingTime, setRecordingTime,
   recordings,
-  setRecordingState
+  setRecordingState,
+  setRecording
 } from "./mediaState";
 
 export class MRecorder {
@@ -11,7 +12,7 @@ export class MRecorder {
   private videoBitrate = 5000000;
   private chunks: Blob[] = [];
   private interval?: ReturnType<typeof setInterval>;
-  private maxRecordings = 100;
+  private maxRecordings = 10;
   private mimeType = "video/webm";
 
   constructor() { }
@@ -64,7 +65,7 @@ export class MRecorder {
         throw new Error("No media tracks available");
       }
 
-      if (recordings().length >= this.maxRecordings) {
+      if ((recordings() ?? []).length >= this.maxRecordings) {
         throw new Error("Max Recordings Reached");
       }
 
@@ -156,10 +157,19 @@ export class MRecorder {
 
         let blob = new Blob(this.chunks, { type: this.mimeType });
         let url = URL.createObjectURL(blob);
+        const id = crypto.randomUUID();
+        const mimeType = this.mimeType;
 
-        setRecordings((prev) => [...prev, {
-          url, mimeType: this.mimeType, blob, id: crypto.randomUUID()
-        }]);
+        const recording = {
+          id, url, blob, mimeType
+        }
+
+        setRecordings((prev) => {
+          const safe = prev ?? [];
+          return [...safe, recording];
+        });
+
+        setRecording({ id, blob, mimeType })
 
         this.chunks = [];
         resolve();
