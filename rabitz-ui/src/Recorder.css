@@ -7,12 +7,9 @@
   border: 1px solid transparent;
   font-family: inherit;
   transition: border-color 0.25s;
-
-  background-color: #242424;
 }
 
 .rb-button:hover:not(:disabled) {
-  color: #818181;
   cursor: pointer;
   border: 1px solid #818181;
 }
@@ -24,8 +21,6 @@
 
 #rb-recordings-container {
   width: 100%;
-  /* display: flex; */
-  /* margin-bottom: 20px; */
 }
 
 .rb-recording {

@@ -129,7 +129,7 @@ export function Devices() {
   });
 
   return (
-    <div id="rb-devices" class="flex justify-center w-5/6 w-max-full mb-4 mx-auto">
+    <div id="rb-devices" class="flex justify-center items-center w-5/6 w-max-full mx-auto p-2 rounded-lg">
       <div class="flex flex-col gap-2  w-full w-max-full text-sm opacity-85">
         <div class="flex items-center gap-2">
           <div>Video</div>
